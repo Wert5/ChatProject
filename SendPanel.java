@@ -1,9 +1,10 @@
 import java.awt.*;
+import java.awt.event.*;
 
 import javax.swing.*;
 
 
-public class SendPanel extends JPanel {
+public class SendPanel extends JPanel implements ActionListener{
 	private MainChat wind= null;
 	private JTextArea mesBox= new JTextArea();
 	private JTextField nameBox= new JTextField();
@@ -18,6 +19,12 @@ public class SendPanel extends JPanel {
 		this.add(nameBox);
 		this.add(sendBut);
 		sendBut.addActionListener(wind);
+		nameBox.addActionListener(wind);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
