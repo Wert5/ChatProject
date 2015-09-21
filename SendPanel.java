@@ -1,8 +1,23 @@
+import java.awt.*;
+
 import javax.swing.*;
 
 
 public class SendPanel extends JPanel {
+	private JFrame wind= null;
+	private JTextArea mesBox= new JTextArea();
+	private JTextField nameBox= new JTextField();
+	private JButton sendBut=new JButton("Send");
 	public SendPanel(JFrame listen){
 		super();
+		wind=listen;
+		this.setLayout(new GridLayout(3,2));
+		this.add(new JLabel("Message:"));
+		this.add(mesBox);
+		this.add(new JLabel("Name:"));
+		this.add(nameBox);
+		this.add(sendBut);
+		sendBut.addActionListener(listen);
 	}
+	
 }
