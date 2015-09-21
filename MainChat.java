@@ -1,7 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JFrame;
+import javax.swing.*;
 
 
 public class MainChat extends JFrame implements ActionListener{
@@ -23,9 +22,15 @@ public class MainChat extends JFrame implements ActionListener{
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		Object source=e.getSource();
+		if(source.getClass().getName()=="JButton"){
+			
+		}else{
+			name=((JTextField) source).getText();
+			this.setTitle(name+"'s Chat");
+		}
 	}
 
 }
