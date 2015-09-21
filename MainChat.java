@@ -25,7 +25,7 @@ public class MainChat extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		Object source=e.getSource();
-		if(source.getClass().getName()=="JButton"){
+		if(source.getClass().getName()=="javax.swing.JButton"){
 			
 		}else{
 			name=((JTextField) source).getText();
