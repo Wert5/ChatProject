@@ -12,7 +12,7 @@ public class SendPanel extends JPanel implements ActionListener{
 	public SendPanel(MainChat listen){
 		super();
 		wind=listen;
-		this.setLayout(new GridLayout(3,2));
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.add(new JLabel("Message:"));
 		this.add(mesBox);
 		this.add(new JLabel("Name:"));
