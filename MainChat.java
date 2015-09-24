@@ -44,7 +44,19 @@ public class MainChat extends JFrame implements ActionListener{
 		if(source.getClass().getName().equals("javax.swing.JButton")){
 			JButton but= (JButton)source;
 			if(but.getActionCommand().equals("Send")){
-				
+				message=send.getMessageText();
+				this.setTitle("Messsage from "+nameSender);
+				mesPan.setMsg(message);
+				mesPan.setVisible(true);
+				this.getContentPane().removeAll();
+				this.getContentPane().add(mesPan);
+				this.getContentPane().repaint();
+				this.getContentPane().revalidate();
+			}else if(but.getActionCommand().equals("Exit")){
+				this.getContentPane().removeAll();
+				this.getContentPane().add(send);
+				this.getContentPane().repaint();
+				this.getContentPane().revalidate();
 			}
 		}else{
 			nameSender=((JTextField) source).getText();
