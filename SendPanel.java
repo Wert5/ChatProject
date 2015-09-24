@@ -22,6 +22,9 @@ public class SendPanel extends JPanel implements ActionListener{
 		nameBox.addActionListener(wind);
 	}
 	
+	public void clear(){
+		mesBox.setText("");
+	}
 	public String getMessageText(){
 		return mesBox.getText();
 	}
