@@ -11,6 +11,7 @@ public class MainChat extends JFrame implements ActionListener{
 	
 	public MainChat(){
 		super();
+		this.setTitle("Your Chat");
 		this.getContentPane().add(send);
 	}
 
@@ -53,6 +54,9 @@ public class MainChat extends JFrame implements ActionListener{
 				this.getContentPane().repaint();
 				this.getContentPane().revalidate();
 			}else if(but.getActionCommand().equals("Exit")){
+				message="";
+				send.clear();
+				this.setTitle(nameSender+"'s Chat");
 				this.getContentPane().removeAll();
 				this.getContentPane().add(send);
 				this.getContentPane().repaint();
