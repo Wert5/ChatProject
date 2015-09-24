@@ -4,7 +4,7 @@ import javax.swing.*;
 
 
 public class MainChat extends JFrame implements ActionListener{
-	private String name="";
+	private String nameSender="";
 	private String message="";
 	private SendPanel send = new SendPanel(this);
 	private MessagePanel mesPan = new MessagePanel(this);
@@ -21,6 +21,22 @@ public class MainChat extends JFrame implements ActionListener{
 		screen.setSize(500, 500);
 	}
 
+	public String getNameSender() {
+		return nameSender;
+	}
+
+	public void setNameSender(String name) {
+		this.nameSender = name;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -31,8 +47,8 @@ public class MainChat extends JFrame implements ActionListener{
 				
 			}
 		}else{
-			name=((JTextField) source).getText();
-			this.setTitle(name+"'s Chat");
+			nameSender=((JTextField) source).getText();
+			this.setTitle(nameSender+"'s Chat");
 		}
 	}
 
