@@ -21,6 +21,10 @@ public class SendPanel extends JPanel implements ActionListener{
 		sendBut.addActionListener(wind);
 		nameBox.addActionListener(wind);
 	}
+	
+	public String getMessageText(){
+		return mesBox.getText();
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
