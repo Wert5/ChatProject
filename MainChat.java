@@ -1,6 +1,8 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class MainChat extends JFrame implements ActionListener{
@@ -61,6 +63,10 @@ public class MainChat extends JFrame implements ActionListener{
 				this.getContentPane().add(send);
 				this.getContentPane().repaint();
 				this.getContentPane().revalidate();
+			}else if(but.getActionCommand().equals("Send Picture")){
+				JFileChooser imgChoose= new JFileChooser();
+				imgChoose.addChoosableFileFilter(new FileNameExtensionFilter("Images","jpg"));
+				imgChoose.showDialog(this, "Choose");
 			}
 		}else{
 			nameSender=((JTextField) source).getText();
