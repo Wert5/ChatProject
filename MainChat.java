@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -8,6 +9,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class MainChat extends JFrame implements ActionListener{
 	private String nameSender="";
 	private String message="";
+	private File imgFile=null;
+	private File sFile=null;
 	private SendPanel send = new SendPanel(this);
 	private MessagePanel mesPan = new MessagePanel(this);
 	
@@ -63,10 +66,28 @@ public class MainChat extends JFrame implements ActionListener{
 				this.getContentPane().add(send);
 				this.getContentPane().repaint();
 				this.getContentPane().revalidate();
-			}else if(but.getActionCommand().equals("Send Picture")){
+			}else if(but.getActionCommand().equals("Choose Picture")){
 				JFileChooser imgChoose= new JFileChooser();
 				imgChoose.addChoosableFileFilter(new FileNameExtensionFilter("Images","jpg"));
-				imgChoose.showDialog(this, "Choose");
+				if(imgChoose.showDialog(this, "Choose")==JFileChooser.APPROVE_OPTION){
+					imgFile=imgChoose.getSelectedFile();
+					mesPan.setImg(imgFile);
+				}else{
+					imgFile=null;
+				}
+			}else if(but.getActionCommand().equals("Choose Sound")){
+				JFileChooser imgChoose= new JFileChooser();
+				imgChoose.addChoosableFileFilter(new FileNameExtensionFilter("Sounds","wav"));
+				if(imgChoose.showDialog(this, "Choose")==JFileChooser.APPROVE_OPTION){
+					sFile=imgChoose.getSelectedFile();
+				}else{
+					sFile=null;
+				}
+			}else if(but.getActionCommand().equals("Play Sound")){
+				if(sFile !=null){
+					EasySound es=new EasySound(sFile.getPath());
+					es.play();
+				}
 			}
 		}else{
 			nameSender=((JTextField) source).getText();
@@ -75,3 +96,4 @@ public class MainChat extends JFrame implements ActionListener{
 	}
 
 }
+
