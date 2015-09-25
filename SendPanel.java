@@ -8,7 +8,7 @@ public class SendPanel extends JPanel implements ActionListener{
 	private MainChat wind= null;
 	private JTextArea mesBox= new JTextArea();
 	private JTextField nameBox= new JTextField();
-	private JButton imgBut=new JButton("Send Picture");
+	private JButton imgBut=new JButton("Choose Picture");
 	private JButton sendBut=new JButton("Send");
 	public SendPanel(MainChat listen){
 		super();
