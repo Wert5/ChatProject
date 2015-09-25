@@ -19,9 +19,11 @@ public class SendPanel extends JPanel implements ActionListener{
 		this.add(new JLabel("Name:"));
 		nameBox.setMaximumSize(new Dimension(500,10));
 		this.add(nameBox);
+		this.add(imgBut);
 		this.add(sendBut);
 		sendBut.addActionListener(wind);
 		nameBox.addActionListener(wind);
+		imgBut.addActionListener(wind);
 	}
 	
 	public void clear(){
